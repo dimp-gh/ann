@@ -138,6 +138,7 @@ def write_dataset_json(dataset, normalized_dataset, path):
     dataset_j = {}
     meta = {}
     meta['size'] = len(dataset)
+    meta['diagnoses'] = list(get_diagnoses(dataset))
     meta['fields'] = [
         dict(name=f.name,
              type='float',
