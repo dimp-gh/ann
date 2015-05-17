@@ -122,6 +122,8 @@ def form_dataset(csv_component_paths):
         part = parse_dirty_dataset(csvpath)
         dataset.extend(part)
 
+    shuffle(dataset)
+
     return dataset
 
 
@@ -165,6 +167,8 @@ def main():
         'peritonitis.csv',
         'appendicitis.csv',
         'hepatitis.csv',
+        'ori.csv',
+        'frk.csv',
     ]
     dataset = form_dataset(csvs)
     check_dataset(dataset)
