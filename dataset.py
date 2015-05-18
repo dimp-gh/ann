@@ -88,7 +88,7 @@ def check_normalized_dataset(normalized_dataset):
 
 
 def get_diagnoses(dataset):
-    return set(row['Диагноз'] for row in dataset)
+    return sorted(list(set(row['Диагноз'] for row in dataset)))
 
 
 def normalize_value(value, field_name):
@@ -182,7 +182,6 @@ def main():
     write_dataset_csv(dataset, 'dataset.csv')
     write_dataset_csv(normalized_dataset, 'dataset-normalized.csv')
     write_dataset_json(dataset, normalized_dataset, 'dataset.json')
-    normalize_dataset(dataset)
 
 
 if __name__ == '__main__':
